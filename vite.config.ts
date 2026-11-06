@@ -24,6 +24,7 @@ const securityHeaders = {
 };
 
 export default defineConfig({
+  base: '/cabinet-cabis/',
   plugins: [react(), tailwindcss()],
   server: {
     headers: {
