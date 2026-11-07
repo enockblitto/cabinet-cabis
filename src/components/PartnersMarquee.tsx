@@ -26,7 +26,7 @@ export const PartnersMarquee: React.FC<{ className?: string }> = ({ className = 
               className="group mx-2 flex h-32 w-40 shrink-0 flex-col items-center justify-center border border-slate-200 bg-white p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#D94800] hover:shadow-lg sm:mx-3 sm:w-48"
               aria-hidden={i >= PARTNERS_LIST.length}
             >
-              <div className="flex h-16 w-full items-center justify-center overflow-hidden">
+              <div className="flex h-24 w-full items-center justify-center overflow-hidden">
                 <img
                   src={partner.logo}
                   alt={partner.name}
@@ -38,7 +38,6 @@ export const PartnersMarquee: React.FC<{ className?: string }> = ({ className = 
                   }}
                 />
               </div>
-              <span className="mt-2 line-clamp-2 text-[10px] font-bold uppercase leading-tight tracking-tight text-slate-600">{partner.name}</span>
             </div>
           ))}
         </div>
