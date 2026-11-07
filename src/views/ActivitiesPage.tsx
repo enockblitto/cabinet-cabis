@@ -46,6 +46,7 @@ const SECTORS = [
     id: 'gsm',
     num: '03',
     title: 'Télécommunications GSM',
+    mobileTitle: 'Télécoms GSM',
     image: assetUrl('/images/hero/hero_telecom.webp'),
     description: 'Les télécommunications GSM jouent un rôle fondamental dans la société moderne, tant sur le plan économique que social.',
     services: [
@@ -86,6 +87,7 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({ onNavigate }) =>
                 <button
                   key={s.id}
                   role="tab"
+                  aria-label={s.title}
                   aria-selected={i === selected}
                   onClick={() => setSelected(i)}
                   className={`group relative z-[1] flex flex-col items-center justify-center gap-1 px-2 py-5 text-center transition-colors duration-300 sm:flex-row sm:gap-4 sm:py-6 ${
@@ -93,7 +95,14 @@ export const ActivitiesPage: React.FC<ActivitiesPageProps> = ({ onNavigate }) =>
                   }`}
                 >
                   <span className={`relative z-10 font-display text-2xl font-black leading-none sm:text-4xl ${i === selected ? 'text-white/90' : 'text-[#D94800]'}`}>{s.num}</span>
-                  <span className="relative z-10 text-[10px] font-black uppercase leading-tight tracking-wider sm:text-sm">{s.title}</span>
+                  <span className="relative z-10 text-[10px] font-black uppercase leading-tight tracking-wider sm:text-sm">
+                    {s.mobileTitle ? (
+                      <>
+                        <span className="lg:hidden">{s.mobileTitle}</span>
+                        <span className="hidden lg:inline">{s.title}</span>
+                      </>
+                    ) : s.title}
+                  </span>
                 </button>
               ))}
               <span
